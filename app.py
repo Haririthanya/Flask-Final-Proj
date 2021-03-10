@@ -17,10 +17,11 @@ prompt.grid(row=0,columnspan = 3,sticky= W)
 select_file_prompt = ttk.Label(TopFrame,text="Choose a leaf image to predict it's disease",font=('Times New Roman',15))
 select_file_prompt.grid(row=22,sticky=W,padx= 5)
 
-def browsefunc():
-    files = [("IMG","*.jpg")]
-    browsefunc.filename = filedialog.askopenfilename(filetypes=files,defaultextension = files)
-    pathlabel.config(text=browsefunc.filename)
+
+choose_img = ttk.Button(TopFrame,text="Choose Image",command=browsefunc)
+choose_img.grid(row=28,sticky=W)
+pathlabel = ttk.Label(window)
+pathlabel.pack()
 
 def browsefunc():
     files = [("IMG","*.jpg")]
